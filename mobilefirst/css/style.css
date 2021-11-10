@@ -1,0 +1,109 @@
+/* Projekt: Mobile first - Ditte, Trine og Freja  */
+
+/* Variabler: genbruges og gør designvalg enkle */
+:root {
+  /* farver */
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #c2d1df;
+  --red: #b02930;
+  --beige: #faf5eb;
+}
+
+/*Fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600&display=swap');
+/*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+
+
+/* Typografi styles */
+
+
+/*Kroppen styles*/
+body {
+  background: var(--beige);
+}
+
+
+/* 1. Mobile enheder (begynd her) */
+@media only screen and (max-width: 768px) {
+  /* 1.1: Mobil enhed styles */
+  .burger {
+    position: absolute;
+    right: 20px;
+  }
+
+  #showMenu {
+    float: right;
+  }
+
+  .burger:hover {
+    left: 0px;
+    background-color: var(--blue);
+  }
+
+  nav {
+    clear: both;
+  }
+
+/* 2. Tablets mv. (fortsæt her) */
+@media only screen and (min-width: 768px) {
+  /* 2.1: Giv baggrunden en farve */
+
+
+
+
+
+
+  /* 2.2: Give #wrap en fast max-bredde, fx 700px.
+     2.3: Sørg for at #wrap står i centrum af vinduet. */
+
+  /* 2.4 Vis burger */
+
+  /* 2.5: Skjul menuen */
+
+
+  /* --- Flexbox (responsivt flex) --- */
+
+  /* 2.6: Få main til at flexe, sæt flex-wrap til wrap og gab til 10px */
+
+  /* 2.7: Hvordan underelementer gøres responsive:
+
+  main > * betyder: for alle "børn" af main { ... css her  ...}
+  Se disse tutorials
+
+  @url: https://flexbox-pattern-cheatsheet.kevinpowell.co/
+  @url: https://www.w3schools.com/cssref/css3_pr_flex.asp
+
+  main > * {
+    flex: 1 1 32ch;
+  }
+
+  Forkortelsen 'flex' kan sætte flere værdier på en gang.
+  Mere om anvendelsen af flex her:
+  @url: https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+
+  Fx: Three values: flex-grow | flex-shrink | flex-basis
+  flex: 2 2 10%;
+
+  Alternativt bruges box sizing, se
+  @url: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+  */
+
+}
+
+/* 3. Stor skærm (slut her) */
+@media only screen and (min-width: 1024px) {
+
+  /* 3.1: Giv baggrunden en farve og sørg for god farvekontrast til tekst */
+
+  /* 3.2: Skjul burgeren */
+
+  /* 3.3: Vis menuen */
+
+  /* 3.4: Gør menuen horisontal */
+
+  /* 3.5 Giv #wrap en max-width på 80% og lad #wrap stå centreret i vinduet */
+
+  /* 3.6 Lad den føste section fylde 100% i bredden  */
+
+}
