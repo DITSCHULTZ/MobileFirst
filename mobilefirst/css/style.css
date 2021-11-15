@@ -16,94 +16,706 @@
 
 
 /* Typografi styles */
+h1, h2, h3, p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
 
 
 /*Kroppen styles*/
 body {
   background: var(--beige);
+  padding-top: 100px;
+}
+
+/*Navigationsbar styles*/
+nav {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  padding: 0 5%;
+  height: 100px;
+}
+
+nav .logo{
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: var(--black);
+}
+
+/* Burgermenu styles */
+#nav-toggle {
+  position: absolute;
+  top: -100px;
+}
+
+nav .icon-burger {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Menulinje styles */
+nav .menu {
+  height: 100%;
+  text-align: right;
+  align-items: center;
+  padding-right: 60px;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+}
+
+.menu ul li{
+  width: auto;
+  margin: 20px;
+  padding: 10px;
+}
+
+.menu ul li a{
+  text-decoration: none;
+  color: var(--black);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+
+.mode, .menu ul li:hover{
+  background-color: var(--blue);
 }
 
 
+/* Dropdown menu styles  */
+.submenu1{
+  display: none;
+}
+
+.menu ul li:hover .submenu1{
+  display: block;
+  position: absolute;
+  background-color: var(--blue);
+  margin-top: 5px;
+  margin-left: -10px;
+}
+
+.menu ul li:hover .submenu1 ul{
+  display: block;
+  margin: 10px;
+}
+
+.menu ul li:hover .submenu1 ul li{
+  width: 150px;
+  padding: 10px;
+  border-bottom: 2px solid var(--red);
+  background: transparent;
+  text-align: left;
+}
+.menu ul li:hover .submenu1 ul li a:hover{
+  color: var(--grey);
+}
+
+
+/*Underside - Om wefood*/
+
+
+/*Kort over butikker + brødtekst*/
+.butik_kort {
+  width: 40%;
+  padding-top: 10%;
+}
+#butikker {
+  margin-top: -55%;
+  padding: 0 5% 0 50%;
+}
 /* 1. Mobile enheder (begynd her) */
 @media only screen and (max-width: 768px) {
   /* 1.1: Mobil enhed styles */
-  .burger {
-    position: absolute;
-    right: 20px;
+  /* Menulinjen styles til mobil enhed */
+  nav .menu {
+    float: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0px;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(176, 41, 48, 0.9);
+    overflow: hidden;
+    transition: all .5s ease-in-out;
   }
 
-  #showMenu {
-    float: right;
+  nav .menu a {
+    font-size: 20px;
   }
 
-  .burger:hover {
-    left: 0px;
-    background-color: var(--blue);
+  nav :checked ~ .menu {
+    bottom: 0;
   }
 
-  nav {
-    clear: both;
+  nav .icon-burger {
+    display: block;
   }
+}
+
+/*Media rules - Underside om wefood*/
+
+/*Overskrift og underrubrik*/
+.koncept_overskrift {
+font-size: 2.5em;
+}
+.koncept {
+  padding-left: 0;
+  text-align: center;
+}
+/*Foto øverst*/
+.konceptfoto_mobil {
+  width: 100%;
+}
+.konceptfoto_web {
+  display: none;
+}
+/*Frivillig baggrundsbillede, overskrift og brødtekst*/
+#blivfrivillig {
+  margin-top: -2%;
+}
+
+.blivfrivillig {
+  width: 100%;
+}
+
+#frivillig_tekst {
+  margin-top: -65%;
+  padding-right: 35%;
+}
+.frivillig_overskrift {
+  font-size: 2em;
+  font-weight: 400;
+  padding-bottom: 5%;
+}
+
+/*Media Rules - Underside - Chokorug*/
+
+/*Boks til overskrift*/
+#boksbeige {
+  background-color: #ece3d0;
+  width: 100%;
+  height: 100px;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+/*Overskrift og underoverskrift*/
+h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: var(--red);
+  font-size: 2.7em;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: -10px;
+}
+
+h2 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: var(--blue);
+  text-align: center;
+}
+
+/*Foto til side*/
+#chokorug {
+  width:70%;
+  height: 60%;
+  padding-left: 15%;
+  height: 250px;
+}
+
+/*Ingrediensoverskrift og brødtekst*/
+.ingrediensliste {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  padding: 80% 15% 0 15%;
+
+}
+p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  padding-left: 15%;
+  font-size: .8em;
+}
+
+/*Fremgangsmåde m. liste og baggrundstekstur*/
+#fremgangsmaade_choko {
+  text-align: center;
+}
+
+.chokoliste {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  font-size: .8em;
+  padding: 0 15% 0 15%;
+  position: absolute;
+  z-index: 1;
+}
+
+#baggrundtekstur {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+/*Tip i bunden af siden*/
+#tip {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  position: absolute;
+  z-index: 1;
+  margin-top: 120%;
+}
+.tiptekst {
+  position: absolute;
+  z-index: 1;
+  padding: 125% 15% 20% 15%;
+}
+
+/*Media Rules - Underside - Ølsmagning*/
+.oel_overskrift {
+  padding-left: 15%;
+}
+
+.oel_intro {
+  text-align: center;
+  padding-bottom: 10%;
+}
+#oeltekst, #oeltekst1, #oeltekst2, #oeltekst3, #oeltekst4, #oeltekst5{
+  margin-top: -150px;
+  padding-left: 30%;
+  padding-bottom: 20%;
+}
+.oelnavn {
+  font-weight: 500;
+}
+.producent {
+  font-size: .7em;
+}
+#infographic_oel {
+  width: 100%;
+  padding: 0 10% 0 10%;
+}
+
+.oel {
+  width: 40%;
+  padding-left: 5%;
+}
 
 /* 2. Tablets mv. (fortsæt her) */
 @media only screen and (min-width: 768px) {
   /* 2.1: Giv baggrunden en farve */
 
+/*Media rules - Underside om wefood*/
+  /*Overskrift og underrubrik*/
+  .koncept_overskrift {
+  font-size: 5em;
+  font-weight: 400;
+  float: left;
+  }
+  .koncept {
+  font-size: 2em;
+  text-align: left;
+  float: left;
+  margin-top: -5%;
+  padding-right: 50%;
+  padding-bottom: 5%;
 
-
-
-
-
-  /* 2.2: Give #wrap en fast max-bredde, fx 700px.
-     2.3: Sørg for at #wrap står i centrum af vinduet. */
-
-  /* 2.4 Vis burger */
-
-  /* 2.5: Skjul menuen */
-
-
-  /* --- Flexbox (responsivt flex) --- */
-
-  /* 2.6: Få main til at flexe, sæt flex-wrap til wrap og gab til 10px */
-
-  /* 2.7: Hvordan underelementer gøres responsive:
-
-  main > * betyder: for alle "børn" af main { ... css her  ...}
-  Se disse tutorials
-
-  @url: https://flexbox-pattern-cheatsheet.kevinpowell.co/
-  @url: https://www.w3schools.com/cssref/css3_pr_flex.asp
-
-  main > * {
-    flex: 1 1 32ch;
   }
 
-  Forkortelsen 'flex' kan sætte flere værdier på en gang.
-  Mere om anvendelsen af flex her:
-  @url: https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+  /*Frivillig baggrundsbillede, overskrift og brødtekst*/
+  .konceptfoto_web {
+    width: 70%;
+  }
+  .konceptfoto_mobil {
+    display: none;
+  }
 
-  Fx: Three values: flex-grow | flex-shrink | flex-basis
-  flex: 2 2 10%;
+  .blivfrivillig {
+    width: 100%;
+    border: 1px solid lightgrey;
+  }
 
-  Alternativt bruges box sizing, se
-  @url: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
-  */
+  #frivillig_tekst {
+  padding-top: 5%;
+
+  }
+  #frivillig_tekst p {
+    font-size: 1.5em;
+    padding-right: 10%;
+  }
+  .frivillig_overskrift {
+    font-size: 4em;
+    font-weight: 400;
+    padding-bottom: 5%;
+  }
+
+  /*Kort over butikker + brødtekst*/
+  .butik_kort {
+    width: 40%;
+    padding-top: 15%;
+  }
+  #butikker {
+    margin-top: -55%;
+    padding: 0 5% 0 50%;
+  }
+
+  #butikker h2 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  #butikker p {
+    font-size: 1.5em;
+    line-height: 1.6;
+  }
+
+  /*Media rules - Underside - Chokorug*/
+
+  /*Boks til overskrift*/
+  #boksbeige {
+    background-color: #ece3d0;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3%;
+  }
+  /*Foto til side*/
+  #chokorug {
+    width:50%;
+    height: 400px;
+    float: right;
+    margin-top: -34%;
+  }
+  /*Overskrift og underoverskrift*/
+  h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--red);
+    font-size: 5em;
+    float: left;
+    padding: 8% 0 0 10%;
+
+  }
+
+  h2 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--blue);
+    font-size: 2.5em;
+    padding-top: 20%;
+    padding-right: 50%;
+
+
+  }
+
+
+  /*Ingrediensoverskrift og brødtekst*/
+  .ingrediensliste {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    padding: 0 15% 0 15%;
+
+  }
+  p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    padding-left: 15%;
+    font-size: 1.3em;
+  }
+
+  /*Fremgangsmåde m. liste og baggrundstekstur*/
+  #fremgangsmaade_choko {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 3em;
+
+  }
+
+  .chokoliste {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.8;
+    padding: 0 20% 0 20%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #baggrundtekstur {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+
+  /*Tip i bunden af siden*/
+  #tip {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 3em;
+    margin-top: -1%;
+    padding-left: 15%;
+    padding-top: 140%;
+    position: absolute;
+    z-index: 1;
+
+
+
+  }
+  .tiptekst {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    z-index: 1;
+    padding: 145% 15% 20% 15%;
+  }
+
+  /*Media Rules - Underside - Ølsmagning*/
+  .oel_overskrift {
+    margin-top: -10%;
+    padding-left: 39%;
+    font-size: 4em;
+  }
+
+  .oel_intro {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 0 0 5% 20%;
+    line-height: 1.5;
+  }
+  #oeltekst, #oeltekst1, #oeltekst2, #oeltekst3, #oeltekst4, #oeltekst5{
+    margin-top: -250px;
+    padding-left: 30%;
+    padding-bottom: 20%;
+  }
+  .oelnavn {
+    font-weight: 500;
+    font-size: 1.8em;
+  }
+  .producent {
+    font-size: 1.3em;
+  }
+  .oelinfo{
+    font-size: 1.5em;
+    margin-left: -15%;
+  }
+  #infographic_oel {
+    width: 100%;
+  }
+
+  .oel {
+    width: 30%;
+    padding-left: 5%;
+  }
 
 }
 
 /* 3. Stor skærm (slut her) */
 @media only screen and (min-width: 1024px) {
 
-  /* 3.1: Giv baggrunden en farve og sørg for god farvekontrast til tekst */
+/*Media rules - Underside om wefood*/
+  /*Overskrift og underrubrik*/
+  .koncept_overskrift {
+  font-size: 5em;
+  font-weight: 400;
+  float: left;
+  }
+  .koncept {
+  font-size: 2em;
+  text-align: left;
+  float: left;
+  margin-top: -5%;
+  padding-right: 50%;
+  padding-bottom: 5%;
 
-  /* 3.2: Skjul burgeren */
+  }
 
-  /* 3.3: Vis menuen */
+  /*Frivillig baggrundsbillede, overskrift og brødtekst*/
+  .konceptfoto_web {
+    width: 70%;
+  }
+  .konceptfoto_mobil {
+    display: none;
+  }
 
-  /* 3.4: Gør menuen horisontal */
+  .blivfrivillig {
+    width: 100%;
+    border: 1px solid lightgrey;
+  }
 
-  /* 3.5 Giv #wrap en max-width på 80% og lad #wrap stå centreret i vinduet */
+  #frivillig_tekst {
+  padding-top: 10%;
 
-  /* 3.6 Lad den føste section fylde 100% i bredden  */
+  }
+  #frivillig_tekst p {
+    font-size: 2.5em;
+    padding-right: 10%;
+  }
+  .frivillig_overskrift {
+    font-size: 5em;
+    font-weight: 400;
+    padding-bottom: 5%;
+  }
+
+  /*Kort over butikker + brødtekst*/
+  .butik_kort {
+    width: 40%;
+    padding-top: 15%;
+  }
+  #butikker {
+    margin-top: -55%;
+    padding: 0 5% 0 50%;
+  }
+
+  #butikker h2 {
+    font-size: 4.3em;
+    font-weight: 400;
+  }
+
+  #butikker p {
+    font-size: 2.5em;
+    line-height: 1.6;
+  }
+
+  /*Media rules - Underside - Chokorug*/
+
+  /*Boks til overskrift*/
+  #boksbeige {
+    background-color: #ece3d0;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3%;
+  }
+  /*Foto til side*/
+  #chokorug {
+    width:50%;
+    height: 400px;
+    float: right;
+    margin-top: -26.1%;
+  }
+  /*Overskrift og underoverskrift*/
+  h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--red);
+    font-size: 5em;
+    float: left;
+    padding: 8% 0 0 10%;
+
+  }
+
+  h2 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--blue);
+    font-size: 2.5em;
+    padding-top: 20%;
+    padding-right: 40%;
+
+
+  }
+
+
+  /*Ingrediensoverskrift og brødtekst*/
+  .ingrediensliste {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    padding: 0 15% 0 15%;
+
+  }
+  p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    padding-left: 15%;
+    font-size: 1.3em;
+  }
+
+  /*Fremgangsmåde m. liste og baggrundstekstur*/
+  #fremgangsmaade_choko {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 3em;
+
+  }
+
+  .chokoliste {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.8;
+    padding: 0 20% 0 20%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #baggrundtekstur {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+
+  /*Tip i bunden af siden*/
+  #tip {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 3em;
+    margin-top: -1%;
+    padding-left: 15%;
+    padding-top: 70%;
+    position: absolute;
+    z-index: 1;
+
+
+
+  }
+  .tiptekst {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    z-index: 1;
+    padding: 75% 15% 20% 15%;
+  }
+
+  /*Media Rules - Underside - Ølsmagning*/
+  .oel_overskrift {
+    margin-top: -10%;
+    padding-left: 35%;
+    font-size: 4em;
+  }
+
+  .oel_intro {
+    font-size: 2em;
+    text-align: center;
+    padding: 0 5% 10% 5%;
+  }
+  #oeltekst, #oeltekst1, #oeltekst2, #oeltekst3, #oeltekst4, #oeltekst5{
+  display:none;
+}
+
+  #infographic_oel {
+    width: 60%;
+    padding-left: 20%;
+
+  }
+
+  .oel {
+  display: none;
+  }
+
 
 }
